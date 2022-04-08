@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coach Profile</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#" class="logo">Logo</a>
+          <form action="#" method="get" class="search_bar">
+            <label for="search"><i class='bx bx-search'></i></label>
+            <input type="text" name="search" id="search" placeholder="Search..">
+          </form>
+          <div style="display: flex; align-items: center; justify-content: center;">
+            <div id="barIcon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <ul class="nav_menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="profile_picture">
+              <img src="images/coach.jpg" alt="">
+            </div>
+            <ul class="profile_menu">
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Log out</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section class="coach_info">
+      <div class="container">
+        <div style="padding: 0 5rem; display: flex; align-items: center; flex-wrap: wrap; gap: 3rem; position: relative;">
+          <div class="coach_img">
+            <img src="images/coach.jpg" alt="">
+          </div>
+          <div class="info">
+            <h4>coach</h4>
+            <h2>Mohamed Ahmed</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quasi corrupti accusamus similique minus, dignissimos illo fugiat odit quibusdam, dolorem explicabo cum veritatis, magnam error cupiditate consequatur modi vel voluptate!</p>
+          </div>
+          <div class="coach_price">
+            <h4 data-price="$">45</h4>
+            <form action="" method="post">
+              <input type="submit" value="Start Journey" name="applyCoach">
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/script.js"></script>
+  </body>
+</html>

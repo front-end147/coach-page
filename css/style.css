@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* --dark: #2E4052; */
+  --dark: #39393A;
+  --yellow: #FFC857;
+  --orange: #F46036;
+  --green: #00A896;
+  --blue: #1789FC;
+  --white: #E6E6E6;
+  --transition: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+section {
+  padding: 3rem 0;
+}
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+header {
+  background: var(--dark);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 70px;
+}
+header nav .logo {
+  font-size: 2.5rem;
+  color: var(--white);
+}
+header nav .search_bar {
+  position: relative;
+  width: 280px;
+  height: 40px;
+}
+header nav .search_bar label {
+  position: absolute;
+  width: 3rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+header nav .search_bar label i {
+  font-size: 1.5rem;
+}
+header nav .search_bar input {
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem 0 2.5rem;
+  background: transparent;
+  border: 1px solid var(--white);
+  outline: none;
+  border-radius: 50px;
+  color: var(--white);
+  font-size: 1rem;
+}
+header nav .search_bar input::placeholder {
+  color: #ccc;
+}
+header nav .search_bar input:focus {
+  border-color: var(--orange);
+}
+header nav #barIcon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+header nav #barIcon span {
+  width: 100%;
+  height: 2px;
+  background: var(--orange);
+  transition: var(--transition);
+  pointer-events: none;
+  position: absolute;
+  transition: var(--transition);
+}
+header nav #barIcon span:first-of-type {
+  transform: translateY(-10px);
+}
+header nav #barIcon.active span:first-of-type {
+  transform: translateY(0) rotate(-45deg);
+}
+header nav #barIcon.active span:nth-of-type(2) {
+  transform: translateX(100%);
+}
+header nav #barIcon span:last-of-type {
+  transform: translateY(10px);
+}
+header nav #barIcon.active span:last-of-type {
+  transform: translateY(0) rotate(45deg);
+}
+header nav .nav_menu {
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+  position: absolute;
+  top: 115%;
+  right: 70px;
+  background: var(--dark);
+  width: 200px;
+  transition: var(--transition);
+  transform-origin: top right;
+  z-index: 10;
+}
+header nav .nav_menu.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+header nav .nav_menu li {
+  width: 100%;
+}
+header nav .nav_menu li:not(:last-of-type) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+header nav .nav_menu li a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--white);
+  padding: 0.5rem 0;
+  transition: var(--transition);
+}
+header nav .nav_menu li:first-child a:before {
+  content: "";
+  position: absolute;
+  border: 10px solid;
+  border-color: transparent transparent var(--dark) transparent;
+  top: -20px;
+  right: 10px;
+  transition: var(--transition);
+}
+header nav .nav_menu li:first-child a:hover:before {
+  border-color: transparent transparent var(--orange) transparent;
+}
+header nav .nav_menu li a:hover {
+  background: var(--orange);
+}
+header nav .profile_picture {
+  width: 55px;
+  height: 55px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 1rem;
+  cursor: pointer;
+  border: 1px solid #fff;
+}
+header nav .profile_picture img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+header nav .profile_menu {
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+  position: absolute;
+  top: 115%;
+  right: 5px;
+  width: 200px;
+  background: var(--dark);
+  transition: var(--transition);
+  transform-origin: top right;
+  z-index: 10;
+}
+header nav .profile_menu.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+header nav .profile_menu li:not(:last-of-type) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+header nav .profile_menu li a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--white);
+  padding: 0.5rem 0;
+  transition: var(--transition);
+}
+header nav .profile_menu li:first-child a:before {
+  content: "";
+  position: absolute;
+  border: 10px solid;
+  border-color: transparent transparent var(--dark) transparent;
+  top: -20px;
+  right: 10px;
+  transition: var(--transition);
+}
+header nav .profile_menu li:first-child a:hover:before {
+  border-color: transparent transparent var(--orange) transparent;
+}
+header nav .profile_menu li a:hover {
+  background: var(--orange);
+}
+
+
+
+.coach_info {
+  min-height: 600px;
+  /* border: 2px solid #f00; */
+}
+.coach_info .coach_img {
+  max-width: 350px;
+  height: 450px;
+  border-radius: 10px;
+  position: relative;
+}
+.coach_info .coach_img:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -20px;
+  top: 20px;
+  background: #fff;
+  border-radius: inherit;
+  z-index: -1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+.coach_info .coach_img img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.coach_info .info {
+  max-width: 550px;
+}
+.coach_info .info h4 {
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+.coach_info .info h2 {
+  font-weight: 600;
+  color: var(--orange);
+}
+.coach_info .info p {
+  color: #666;
+  font-size: 0.95rem;
+}
+.coach_info .coach_price {
+  position: absolute;
+  right: 50px;
+  bottom: -50px;
+  width: 250px;
+  background: var(--dark);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.coach_info .coach_price h4 {
+  color: var(--white);
+  font-size: 2.5rem;
+}
+.coach_info .coach_price h4:before {
+  content: attr(data-price);
+  font-family: "Cairo", "Poppins", sans-serif;
+}
+.coach_info .coach_price input {
+  border: 1px solid transparent;
+  outline: none;
+  background: var(--white);
+  display: block;
+  color: var(--dark);
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+  margin: 0 auto;
+  cursor: pointer;
+}
+.coach_info .coach_price input:hover {
+  border-color: var(--white);
+  color: var(--white);
+  background: transparent;
+}
